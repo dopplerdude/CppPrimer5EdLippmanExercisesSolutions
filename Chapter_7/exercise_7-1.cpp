@@ -15,9 +15,9 @@ unsigned int Sales_data::numOfBooksInInventory = 0;
 
 void Sales_data::combine(Sales_data trans)
 {
-    this->bookName = trans.bookName;
-    this->numOfBooksSold += trans.numOfBooksSold;
-    this->revenue += trans.revenue;
+    bookName = trans.bookName;
+    numOfBooksSold += trans.numOfBooksSold;
+    revenue += trans.revenue;
 }
 
 const unsigned int MAX_BOOKS = 100; 
