@@ -28,8 +28,8 @@ int main()
   cin.ignore();
   getline(cin, p.address);
 
-  cout << p.name << endl;
-  cout << p.address << endl;
+  cout << p.getName() << endl;
+  cout << p.getAddress() << endl;
 
   return 0;
 }
