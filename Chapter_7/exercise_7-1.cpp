@@ -5,26 +5,19 @@ using namespace std;
 struct Sales_data
 {
     string bookName;
-    double revenue;
-    unsigned numOfBooksSold;
+    double revenue = 0.0;
+    unsigned numOfBooksSold = 0;
     static unsigned int numOfBooksInInventory;
     void combine(Sales_data trans);
-    void add(Sales_data trans);
 };
 
 unsigned int Sales_data::numOfBooksInInventory = 0;
 
 void Sales_data::combine(Sales_data trans)
 {
+    this->bookName = trans.bookName;
     this->numOfBooksSold += trans.numOfBooksSold;
     this->revenue += trans.revenue;
-}
-
-void Sales_data::add(Sales_data trans)
-{
-    this->bookName = trans.bookName;
-    this->numOfBooksSold = trans.numOfBooksSold;
-    this->revenue = trans.revenue;
 }
 
 const unsigned int MAX_BOOKS = 100; 
@@ -51,7 +44,7 @@ int main()
 
         if((bookFoundInInventory == false) && (Sales_data::numOfBooksInInventory < MAX_BOOKS))
         {
-            inventory[i].add(newBook);
+            inventory[i].combine(newBook);
             Sales_data::numOfBooksInInventory = i + 1;
         }
     }
