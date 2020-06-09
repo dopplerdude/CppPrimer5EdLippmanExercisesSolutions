@@ -29,6 +29,7 @@ string Sales_data::isbn() const
 const unsigned int MAX_BOOKS = 100; 
 istream& read(istream &is, Sales_data &item);
 void print(ostream &os, Sales_data &item);
+Sales_data add(Sales_data &lhs, Sales_data &rhs);
 
 istream& read(istream &is, Sales_data &item)
 {
@@ -43,6 +44,13 @@ void print(ostream &os, Sales_data &item)
     os << item.bookName << "  "
     << item.numOfBooksSold << "  "
     << item.revenue << endl;
+}
+
+Sales_data add(Sales_data &lhs, Sales_data &rhs)
+{
+    Sales_data sum = lhs;
+    lhs.combine(rhs);
+    return sum;
 }
 
 int main()
