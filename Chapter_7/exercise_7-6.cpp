@@ -49,7 +49,7 @@ void print(ostream &os, Sales_data &item)
 Sales_data add(Sales_data &lhs, Sales_data &rhs)
 {
     Sales_data sum = lhs;
-    lhs.combine(rhs);
+    sum.combine(rhs);
     return sum;
 }
 
